@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jg.mapper.customerMapper">
+	<select id="showStore" resultType="com.jg.dto.CustomerStoreDto">
+		select c.ceo_store_name,p.* from product p, ceo c where p.ceo_number = c.ceo_number
+	</select>
+	<select id="loginAction" resultType="java.lang.Integer">
+		select count(*) from customer where customer_id= #{customer_id} and customer_pw = #{customer_pw}
+	</select>
+	<insert id="registerAction">
+		insert into customer values (#{customer_id},#{customer_pw},#{customer_name},#{customer_address},#{customer_phone},#{customer_email})
+	</insert>
+	<select id="myPage" resultType="com.jg.dto.CustomerDto">
+		select * from customer where customer_id = #{id}
+	</select>
+	<delete id="dropMember">
+		delete from customer where customer_id = #{id}
+	</delete>
+	<update id="changePW">
+		update customer set customer_pw = #{pw}  where customer_id = #{id}
+	</update>
+	<select id='customerOrderList' resultType="com.jg.dto.CustomerOrderDto">
+		select * from customer_orderlist where customer_id = #{id}
+	</select>
+	<select id="getProductName" resultType="java.lang.String">
+		select product_k_name from product where  ceo_number = #{ceo_number} and product_number = #{product_number}
+	</select>
+	<select id="getProductPrice" resultType="java.lang.String">
+		select product_price from product where  ceo_number = #{ceo_number} and product_number = #{product_number}
+	</select>
+	<select id="reviewList" resultType="com.jg.dto.CustomerReviewDto">
+		select p.product_k_name,c.* from customer_review c,product p  where customer_id = #{id} and p.product_number = c.product_number
+	</select>
+	<update id="modifyPhone">
+		update customer set customer_phone = #{customer_phone} where customer_id = #{customer_id}
+	</update>
+	<update id="modifyEmail">
+		update customer set customer_email = #{customer_email} where customer_id = #{customer_id}
+	</update>
+	<insert id="buyProduct">	
+		insert into customer_orderlist 
+		(order_number,customer_id,product_number_amount,ceo_number,total_price,required_address,delivery_whether)
+		values (CUSTOMER_ORDER_SEQ.nextval,#{customer_id},#{product_number_amount},#{ceo_number},#{price},#{required_address},0)
+	</insert>
+	<select id="getAddress" resultType="java.lang.String">
+		select customer_address from customer where customer_id = #{customer_id}
+	</select>
+	<update id="modifyReview">
+		update customer_review set customer_content = #{customer_content} where order_number = #{order_number} and customer_id = #{customer_id}
+	</update>	
+	<delete id="deleteReview">
+		delete from customer_review where customer_id = #{customer_id} and order_number = #{order_number}
+	</delete>	
+	<select id="checkOrderList" resultType="java.lang.Integer">
+		select count(*) from customer_orderlist c where substr(product_number_amount,0,instr(product_number_amount,'_')-1) = #{product_number} and ceo_number = #{ceo_number} and customer_id = #{customer_id}
+	</select>
+	<select id='getOrderNumber' resultType="java.lang.Integer">
+		select c.order_number from customer_orderlist c where substr(product_number_amount,0,instr(product_number_amount,'_')-1) = #{product_number} and ceo_number = #{ceo_number} and customer_id = #{customer_id}
+	</select>
+	<select id="checkReview" resultType="java.lang.Integer">
+		select count(*) from customer_review where order_number = #{order_number}
+	</select>
+	<insert id="writeReview">
+		insert into customer_review (customer_id,order_number,product_number,ceo_number,customer_content,rating) values (#{customer_id},#{order_number},#{product_number},#{ceo_number},#{customer_content},#{rating})
+	</insert>	
+		
+		
+		
+		
+</mapper>

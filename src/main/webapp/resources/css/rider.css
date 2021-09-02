@@ -1,0 +1,302 @@
+@charset "UTF-8";
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+body{
+   font-family: 'Noto Sans KR', sans-serif; 
+}
+a { text-decoration:none !important ; } a:hover { text-decoration:none !important ; }
+/* header */
+.nav-menu {
+		display:flex;
+		flex-basis: 315px;
+		text-align: center;
+	}
+.h1 { border-bottom:1px solid rgb(221, 221, 221); }
+.riderlogout_btn {
+   border:1px solid rgb(187, 187, 187);
+   border-radius:12px;
+   background-color: rgb(187, 187, 187);
+   color:white;
+   margin-left:5px;
+   height:30px;
+   cursor:pointer;
+}
+.product-manage, .order-manage, .review-manage {width:100px; cursor:pointer;}
+.all {margin-bottom:20px;}
+.header_top {
+		margin: 0 auto;
+	 	width: 1280px;
+		height:50px;
+	    background-color: rgb(255, 255, 255);
+	    text-align:center;
+	    padding-top:1px;
+	    display: flex;
+	    justify-content: space-between;
+	}
+.htext1, .htext2, .nav_img, .nav_box {
+	list-style:none; 
+}
+.mart_owner, .mart_user, .mart_rider, .mart_login, .mart_regi {
+	 color: rgb(187, 187, 187);
+	 font-size:14px;
+	 cursor:pointer;
+}
+.htext1 li {float:left; margin-right: 10px;}
+.htext1 li::after {padding-left:10px; content:"|";  color: rgb(187, 187, 187);}
+.htext1 li:last-child::after{content:""}
+.htext2 li {float:right; margin-right:10px;}
+.mart_login::after {padding-left:10px; content:"|";  color: rgb(187, 187, 187);}
+.all>ul>li {
+	display: inline;
+}
+.nav {
+	margin: 0 auto;
+	width:1280px;
+	height:80px;
+	background-color: rgb(255, 255, 255);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.bmimg>img {
+	width: 188px;
+	margin-top:7px;
+	cursor:pointer;
+}
+/* footer*/
+.rider_service_div{
+	display:flex;
+}
+.content-footer {
+    width: 1280px;
+	margin:0 auto;
+}
+.notice {flex-basis:81px; line-height:47px; font-size:15px;}
+.bmservice, .bmowner, .electro_service, .privacy {
+	font-size:15px;	
+	flex-basis: 175px;
+	text-align:center;
+	line-height:45px;
+}
+.consumer_img {display:inline-block; margin-top: 13px;}
+.consumer {
+	font-size:15px;	
+	flex-basis: 127px;
+	line-height:47px;
+}
+.bmservice::after, .bmowner::after, .electro_service::after, .privacy::after {margin-left:15px; content:"|"; color:#dddddd;}
+.notice::after {margin-left:15px; content:"|"; color:#dddddd;}
+/* 회원가입*/
+.riderRegister{
+    margin: 10px 0px;
+    width: 120px;
+    border: 0;
+    background: gray;
+    height: 42px;
+    font-family: 'Noto Sans KR';
+    border-radius: 10px;
+    letter-spacing: 2px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+
+.rider-wrap > label{
+    padding: 4px;
+    background-color: #6b6868;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+    margin: 1px 13px;
+    display: inline-block;
+    width: 66px;
+}
+.rider-wrap> input[type="file"] { 
+	width: 1px; 
+	height: 1px; 
+}
+.img_profile{
+	width:100px;
+	height:100px;
+	border-radius:48px;
+}
+.rider-wrap {
+	width:415px;
+	min-height:460px;
+    padding: 30px 40px;
+    border: 1px solid rgb(236, 238, 242);
+    box-sizing: border-box;
+    border-radius: 5px;
+    margin:0 auto;
+    margin-top: 70px;
+    background-color:#222629;
+}
+.rider-title {
+	color:#6b6868;
+	text-align:center;
+	margin:15px 0px 50px 0px;
+}
+.riderinput-info>input {
+	background-color:#101113;
+	color:#afafaf;
+	border:none;
+	padding-left: 10px;
+   	box-sizing: border-box;
+   	width:98%;
+	height:40px;
+	display:block;
+	margin-bottom:12px;
+	outline: none;
+	text-align: left;
+}
+.riderinfo-find {
+	height: 40px;
+    margin-bottom: 2px;
+    margin-top: 20px;
+}
+.riderlogin-btn {
+	margin-top: 15px;
+	text-align:center;
+    font-family: 'Noto Sans KR';
+    font-size: 18px;
+    letter-spacing: 1px;
+    color: white;
+    width: 130px;
+    height: 35px;
+    border: none;
+    background: #6b6868;
+    border-radius: 10px;
+}
+.riderinfo-find>a{
+	margin: 0 3px;	
+	float:right;
+	font-weight: 700;
+    font-size: 12px;
+    line-height: 20px;
+    color: rgb(142, 146, 159);
+    cursor: pointer;
+    letter-spacing: normal;
+    font-family: 'Noto Sans KR', sans-serif; 
+}
+.riderlogin-a>button {
+	width: 100%;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 24px;
+    cursor: pointer;
+    border-radius: 2px;
+    background: #C6E2F1;
+    color: white;
+    height: 56px;
+    font-family: 'Noto Sans KR', sans-serif; 
+    border:none;
+}
+.riderid-check {font-family: 'Noto Sans KR', sans-serif; font-size:13px; color:rgb(142, 146, 159);}
+.riderlogin-pw-find::after {margin-right:10px; margin-left: 10px; content:"|"; color:#dddddd;}
+.riderlogin-id::after {margin-right:10px; margin-left: 10px; content:"º"; color:#dddddd;}
+
+/* */
+h2{
+	margin:0;	
+}
+#rider_main{
+	margin: 0 auto;
+    display: flex;
+    width: 1280px;
+    height: 450px;
+    border: 1px solid black;
+}
+#rider_main_bar{
+	width: 160px;
+    height: 450px;
+    background: black;
+    color: white;
+}
+.rider_id_side{
+	padding:10px;
+    height: 70px;
+}
+.rider_id_side > a {
+	font-size: 11px;
+    color: #b2a8a8;
+}
+.rider_side_bar{
+	padding: 10px;
+    height: 23px;
+    font-size: 16px;
+}
+.rider_side_bar > a{
+	color:white;
+}
+#rider_section{
+    width: 100%;
+	padding:20px;
+}
+.customer_orderList, .rider_delivery{
+    height: 100px;
+    width: 700px;
+	margin:10px 0px;
+}
+.customer_orderList_number, .rider_delivery_number{
+	color: #8383e2;
+    font-size: 18px;
+    font-weight: bold;
+}
+.customer_orderDate, .rider_deliveryDate{
+	display: inline-block;
+    margin-right: 10px;
+    padding-right: 10px;
+    font-size: 17px;
+    border-right: 1px solid black;
+}
+.customer_orderList_text, .rider_delivery_text{
+	vertical-align: middle;
+	display: inline-block;
+    width: 500px;
+}
+.customer_orderList_text_button, .rider_delivery_text_button{
+	display:inline-block;
+	padding:10px;
+}
+.rider_takeover, .rider_pick_up, .rider_delivery_done{
+	cursor: pointer;
+	width: 83px;
+    height: 35px;
+    font-size: 18px;
+    background: black;
+    color: white;
+    border: none;
+    font-family: 'Noto Sans KR';
+}
+.customer_order_store_location, .rider_delivery_store_location{
+	color: #807979;
+    font-size: 13px;
+}
+
+/*        ---------     */
+.rider_delivery_list{
+    padding: 10px;
+    width: 320px;
+    height: 59px;
+    background: black;
+    margin: 10px 0px;
+    color: white;
+    display:flex;
+}
+.rider_delivery_area{
+	width: 241px;	
+}
+.rider_delivery_area_side{
+	line-height:55px;	
+}
+.rider_delivery_order_number{
+    font-size: 12px;
+}
+.rider_delivery_order_date{
+    font-size: 10px;
+    color: gray;
+}	
+.rider_delivery_list_store{
+	font-size: 19px;
+}
+
+

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jg.mapper.ceoMapper">
+	<insert id="register">
+		insert into ceo(ceo_id,ceo_pw,ceo_store_name,ceo_phone,ceo_address,ceo_number) values (#{ceo_id},#{ceo_pw},#{ceo_store_name},#{ceo_phone},#{ceo_address},CEO_REGISTER_SEQ.nextval)
+	</insert>
+	<select id="login" resultType="java.lang.String">
+       select ceo_number from ceo where ceo_id=#{ceo_id} and ceo_pw=#{ceo_pw}
+    </select>
+    <!-- ceo 메인 페이지 -->
+    <select id="orderAmount" resultType="java.lang.String">
+    	select count(*) from customer_orderlist where ceo_number = #{ceo_number}	    
+	</select>
+	<select id="priceAmount" resultType="java.lang.Integer">
+		select sum(total_price) from customer_orderlist where ceo_number = #{ceo_number}
+	</select>
+	<select id="deliveryAmount" resultType="java.lang.Integer">
+		select count(*) from customer_orderlist where ceo_number = #{ceo_number} and delivery_whether = #{delivery_whether}
+	</select>
+	<insert id='registerProduct'>
+		insert into product (ceo_number,product_number,product_category,product_k_name,product_price,product_stock,product_detail) values (#{ceo_number},#{product_number},#{product_category},#{product_k_name},#{product_price},#{product_stock},#{product_detail})
+	</insert>
+	<select id="searchByName" resultType="com.jg.dto.CeoProductDto">
+		select * from product where ceo_number = #{ceo_number} and product_k_name = #{product_k_name}
+	</select>	
+	<select id="searchByNumber" resultType="com.jg.dto.CeoProductDto">
+		select * from product where ceo_number = #{ceo_number} and product_number = #{product_number}
+	</select>
+	<select id="orderListByCustomerID" resultType="com.jg.dto.CeoOrderDto">
+		select * from customer_orderlist where ceo_number = #{ceo_number} and customer_id = #{customer_id}
+	</select>
+	<select id="findEachProductPrice" resultType="java.lang.String">
+		select product_price from product where ceo_number = #{ceo_number} and product_number = #{product_number}
+	</select>
+	<select id="findProductName" resultType="java.lang.String">
+		select product_k_name from product where ceo_number = #{ceo_number} and product_number = #{product_number}
+	</select>
+	<select id="reviewList" resultType="com.jg.dto.CeoReviewDto">
+		select * from customer_review where ceo_number = #{ceo_number}
+	</select>
+	
+	
+	
+	
+	
+	
+</mapper>

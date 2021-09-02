@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jg.mapper.riderMapper">
+	<select id="loginAction" resultType="java.lang.Integer">
+		select count(*) from rider where rider_id= #{id} and rider_pw= #{pw}
+	</select>
+	<select id="findOrderList" resultType="com.jg.dto.RiderOrderDto">
+		select * from customer_orderlist where delivery_whether = 0
+	</select>
+	<select id="findProductName" resultType="java.lang.String">
+		select product_k_name from product where ceo_number = #{ceo_number} and product_number = #{product_number}
+	</select>
+	<select id="findCeoStoreName" resultType="java.lang.String">
+		select ceo_store_name from ceo where ceo_number = #{ceo_number}
+	</select>
+	<select id="findCeoAddress" resultType="java.lang.String">
+		select ceo_address from ceo where ceo_number = #{ceo_number}		
+	</select>
+	<insert id="registerAction">
+		insert into rider values (#{id},#{pw},#{name},#{phone},#{address})
+	</insert>
+	<insert id="insertDeliveryList">
+		insert into rider_deliverylist (rider_id,order_number) values (#{rider_id},#{order_number})
+	</insert>
+	<update id="updateOrderList">
+		update customer_orderlist set delivery_whether = 1 where order_number = #{order_number}
+	</update>
+	<select id='riderOrderNumber' resultType="java.lang.String">
+		select order_number from rider_deliverylist where rider_id = #{rider_id}
+	</select>
+	<select id="riderDeliveryList" resultType="com.jg.dto.RiderOrderDto">
+		select * from customer_orderlist where order_number = #{order_number} and delivery_whether not in(0,3) <!-- 여기서문제 -->
+	</select>
+	<update id="updateDelivery">
+		update customer_orderlist set delivery_whether = 2 where order_number = #{order_number}
+	</update>
+	<update id="deliveryDone">
+		update customer_orderlist set delivery_whether = 3 where order_number = #{order_number}
+	</update>
+	<select id="deliveryDoneList" resultType="com.jg.dto.RiderOrderDto">
+		select * from customer_orderlist where order_number = #{order_number} and delivery_whether =3
+	</select>
+	
+</mapper>

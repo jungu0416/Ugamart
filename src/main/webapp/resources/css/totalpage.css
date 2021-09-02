@@ -1,0 +1,111 @@
+@charset "UTF-8";
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+html,body {width:100%; height:100%; margin:0px; padding:0px; overflow:hidden;}
+/* MainPage */	 
+#fullpage {position:relative; margin-top: -20px; z-index:9; width:100%; height:100%;}
+a {
+	color: #5f5858;
+   text-decoration: none;
+}
+.fullsection {width:100%;height:722px;position:relative;}
+.full1 {
+	font-family: 'IM_Hyemin-Bold';
+	background-repeat: no-repeat;
+}
+.full2 {background:#FFBB9A; font-family: 'FOUREYES';}
+.full3 {background:#FFBB9A; font-family: 'FOUREYES';}
+.full4 {background:#FFBB9A; font-family: 'FOUREYES';}
+.full5 {background:#fff;}
+#fullpage span {
+	display:block;
+	position:absolute;
+	top:20%; 
+	left:19%;
+	transform:translate(-50%,-50%);
+	color:#fff;font-size:5em;
+	font-weight:bold;
+}
+.full2 span {color:#000; }
+.rider {
+	top: 63%;
+    left: 50%;
+    width: 617px;
+    height: 300px;
+    position: absolute;
+}
+.quick-ul>li{margin:0;padding:0;list-style:none}
+.quick {position:fixed;right:20px;top:50%;transform:translateY(-50%); z-index:100000}
+.quick li {width:10px;height:10px;margin-bottom:10px; border-radius:15px;border:2px solid #fff;cursor:pointer;}
+.quick .on {
+	background:#fff; 
+	background: url(img/Allshares/dot.png) no-repeat;
+	display: block;
+    width: 20px;
+    height: 20px;
+    background-size: 100% 100%;
+}
+.underline {
+	display: block;
+    position: absolute;
+    top: 14%;
+    left: 5%;
+    width: 96px;
+   	height: 6px;
+}
+.good-txt {
+	display: block;
+    position: absolute;
+    top: 26%;
+   	left: 5%;
+}
+.good-bye {
+	display: block;
+    position: absolute;
+	top: 33%;
+    left: 5%;
+}
+.goodbye-img {
+	display: block;
+    position: absolute;
+    top: 2%;
+    left: 63%;
+}
+@font-face {
+    font-family: 'IM_Hyemin-Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2106@1.1/IM_Hyemin-Bold.woff2') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'FOUREYES';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/FOUREYES.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+.full5-2 {
+	position:absolute;
+	top:25%;
+	left:22%;
+	height:400px;
+	width: 900px;
+}
+.marg-img {
+	margin:0 auto;
+	position:absolute;
+	bottom:-5px;
+	left:0;
+}
+.admin {
+	position: absolute;
+    width: 350px;
+    height: 350px;
+    bottom: -30px;
+    right: 12%;
+}
+.shopping {
+	top: 56%;
+    right: 16%;
+    width: 410px;
+    height: 329px;
+    position: absolute;
+}
